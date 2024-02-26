@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "target": "es6", // Specify ECMAScript target version
+      "module": "commonjs", // Specify module code generation
+      "checkJs": true, // Enable type checking for JavaScript files
+      "jsx": "react", // Enable JSX support
+      "baseUrl": "./",
+      "paths": {
+        "*": ["src/*"]
+      }
+    },
+    "include": ["src/**/*"] // Include all files in the src directory
+  }
+  

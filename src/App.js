@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React from 'react';
+import Board from './components/Board';
+import TileRack from './components/TileRack';
+import './styles/App.css';
+import { useGameLogic } from './hooks/useGameLogic'; // Make sure the path matches where you saved useGameLogic.js
 
 function App() {
+  const {
+    board,
+    handleCellClick,
+    playerTiles,
+    handleTileClick,
+    selectedTileIndex,
+    submitTurn, // Assuming this function is implemented in useGameLogic
+  } = useGameLogic();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Scrabblr</h1>
+      <div className="game-container">
+        <div className="game-area">
+          <Board 
+            board={board} 
+            handleCellClick={handleCellClick} 
+          />
+          <TileRack 
+            tiles={playerTiles} 
+            onTileClick={handleTileClick} 
+            selectedTileIndex={selectedTileIndex} 
+          />
+        </div>
+        <div className="side-panel">
+          <button onClick={submitTurn} className="submit-turn-button">Submit Turn</button>
+          {/* Future Scoreboard goes here */}
+        </div>
+      </div>
     </div>
   );
 }

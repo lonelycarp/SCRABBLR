@@ -1,0 +1,76 @@
+/* In App.css */
+.board {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the content */
+  max-width: 100%; /* Ensures board doesn't overflow its container */
+  margin: auto; /* Centers the board horizontally */
+  overflow: auto; /* Adds scrollbars if the board overflows */
+}
+.row {
+  display: flex;
+}
+.cell {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: beige;
+}
+
+.double-letter {
+  background-color: #add8e6; /* Light blue for Double Letter */
+}
+
+.triple-letter {
+  background-color: #325396; /* Sky blue for Triple Letter */
+}
+
+.double-word {
+  background-color: #ffb6c1; /* Light pink for Double Word */
+}
+
+.triple-word {
+  background-color: #ff6347; /* Tomato for Triple Word */
+}
+
+/*TileRack*/
+
+.tile-rack {
+  display: flex;
+  padding: 10px;
+  gap: 2px; /* Adjust the space between tiles */
+  
+}
+
+.game-container {
+  display: flex;
+  justify-content: center; /* Center the content */
+  align-items: flex-start; /* Align items at the start of the container */
+}
+
+.game-area {
+  /* If you want the game area to take up more space */
+  order: 1;
+  flex-grow: 1;
+}
+
+.side-panel {
+  order: 2;
+  gap: 2px; /* Space between items */
+  padding-left: 0; /* Adjust or remove padding as needed */
+  margin-left: 0; /* Reduce or remove margin for closer placement */
+}
+.game-area, .side-panel {
+  /* Adjust these values as necessary for your layout */
+  flex-basis: calc(40% - 10px); /* Subtracting gap/2 from each side to ensure fitting */
+}
+
+
+.submit-turn-button {
+  padding: 10px 10px;
+  cursor: pointer;
+}
+
