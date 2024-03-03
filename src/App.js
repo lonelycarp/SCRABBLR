@@ -15,6 +15,7 @@ function App() {
     submitTurn, // Assuming this function is implemented in useGameLogic
   } = useGameLogic();
 
+
   return (
     <div className="App">
       <h1>Scrabblr</h1>
@@ -31,7 +32,11 @@ function App() {
           />
         </div>
         <div className="side-panel">
-          <button onClick={submitTurn} className="submit-turn-button">Submit Turn</button>
+          <button 
+          onClick={submitTurn} 
+          className="submit-turn-button">
+          Submit Turn
+          </button>
           {/* Future Scoreboard goes here */}
         </div>
       </div>
